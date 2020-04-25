@@ -35,7 +35,7 @@ for el in users:
 
 for el in final_js_object:
     cnt = len(final_books_list)
-    if a <= cnt:
+    if a < cnt:
         el['books'].append(final_books_list[a])
     a += 1
 
