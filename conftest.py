@@ -1,5 +1,6 @@
 import pytest
 from random import randint
+from api_tests.api.dogs_api_client import DogsApiClient
 
 @pytest.fixture()
 def random_num():
@@ -39,3 +40,20 @@ def fixture_witch_params_num(request):
 @pytest.fixture(params=['банан', 'яблоко', 'апельсин', 'груша'])
 def fixture_witch_params_word(request):
     return request.param
+
+
+@pytest.fixture(scope='session')
+def client_dogs():
+    client_dogs = DogsApiClient(host='https://dog.ceo/api',
+                                num=randint(1, 50)
+                                )
+    return client_dogs
+
+
+@pytest.fixture(params=['affenpinscher', 'african', 'dalmatian', 'groenendael'])
+def client_with_params(request):
+    client_with_params = DogsApiClient(host='https://dog.ceo/api',
+                                       # num=randint(1, 50),
+                                       breed=request.param
+                                       )
+    return client_with_params
