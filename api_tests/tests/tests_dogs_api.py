@@ -22,4 +22,8 @@ class TestDogsApi:
         res = client_with_params.vr(client_with_params.get_list_by_breed(), [200, 201])
         assert breed in res.json()['message'][0], 'В ответе некорректные ссылки, не та порода'
 
+    def test_get_list_by_sub_breeds(self, client_with_params_sub_breeds):
+        res = client_with_params_sub_breeds.vr(client_with_params_sub_breeds.get_list_by_sub_breed(), [200, 201])
+        assert len(res.json()['message'][0]) > 0, 'Сервис вернул пустой список'
+
 
