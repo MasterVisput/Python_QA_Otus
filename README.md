@@ -1,4 +1,12 @@
 # Python_QA_Otus
+ API tests в папке api_tests
+ conftests.py для API также в папке api_tests
+ requirements.txt общий для всего репозитория
+ 
+ 
+ 
+ 
+ 
  Learning
  
  В данный момент я занимаюсь ручным функциональным тестированием. 
