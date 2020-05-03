@@ -62,7 +62,7 @@ class GeometricalFigure:
 
     def add_square(self, figure):
         if isinstance(figure, GeometricalFigure):
-            return self.get_perimeter() + figure.get_area()
+            return self.get_area() + figure.get_area()
         else:
             return 'Переданный объект не является экземпляром класса GeometricalFigure!'
 
